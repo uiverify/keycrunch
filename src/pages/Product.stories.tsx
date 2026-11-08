@@ -19,4 +19,6 @@ export const Keyboard: Story = { parameters: at("keycrunch-75") };
 
 export const Keycaps: Story = { parameters: at("keycrunch-keycaps") };
 
+export const SoldOut: Story = { parameters: at("keycrunch-leather-mat") };
+
 export const NotFound: Story = { parameters: at("keycrunch-100") };

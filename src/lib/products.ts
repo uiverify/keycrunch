@@ -36,6 +36,7 @@ const oak = "#d8b98a";
 const orange = "#ff5a1f";
 const sand = "#e2d6c2";
 const charcoal = "#3a3a3a";
+const tan = "#c27d45";
 
 export const products: Product[] = [
   {
@@ -164,6 +165,29 @@ export const products: Product[] = [
     ],
     rating: 4.6,
     reviewCount: 145,
+  },
+  {
+    id: "keycrunch-leather-mat",
+    name: "Keycrunch Leather Desk Mat",
+    category: "desk-mats",
+    price: 89,
+    tagline: "Full-grain leather",
+    description:
+      "Vegetable-tanned full-grain leather with a felt underside. It darkens and softens with use, so yours ends up unlike anyone else's.",
+    image: "desk-mat-leather",
+    options: [
+      { name: "Colour", values: [{ name: "Tan", swatch: tan }] },
+      { name: "Size", values: [{ name: "Medium" }, { name: "Large" }] },
+    ],
+    specs: [
+      ["Material", "Full-grain leather, felt base"],
+      ["Thickness", "3 mm"],
+      ["Medium", "700 × 300 mm"],
+      ["Large", "900 × 400 mm"],
+    ],
+    rating: 4.9,
+    reviewCount: 82,
+    soldOut: true,
   },
   {
     id: "keycrunch-coiled-cable",
