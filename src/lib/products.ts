@@ -90,6 +90,27 @@ export const products: Product[] = [
     reviewCount: 188,
   },
   {
+    id: "keycrunch-tkl-pro",
+    name: "Keycrunch TKL Pro",
+    category: "keyboards",
+    price: 219,
+    tagline: "Gasket mount · Tri-mode",
+    description:
+      "Our flagship tenkeyless board. A heavy two-piece case, a poron-dampened gasket stack and factory-lubed switches give it a deep, quiet sound with no tuning needed.",
+    image: "keycrunch-tkl-pro",
+    options: [{ name: "Switches", values: [{ name: "Linear" }, { name: "Tactile" }] }],
+    specs: [
+      ["Layout", "TKL, 87 keys"],
+      ["Case", "Two-piece aluminium"],
+      ["Mount", "Gasket, poron dampened"],
+      ["Connection", "USB-C, Bluetooth 5.1, 2.4 GHz"],
+      ["Weight", "2.3 kg"],
+    ],
+    rating: 4.9,
+    reviewCount: 64,
+    isNew: true,
+  },
+  {
     id: "keycrunch-wrist-rest",
     name: "Keycrunch Wrist Rest",
     category: "wrist-rests",
