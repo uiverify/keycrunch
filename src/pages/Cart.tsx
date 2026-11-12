@@ -3,6 +3,7 @@ import { useCart } from "@/cart/CartContext";
 import { CartLine } from "@/components/CartLine";
 import { Icon } from "@/components/Icon";
 import { OrderSummary } from "@/components/OrderSummary";
+import { ShippingProgress } from "@/components/ShippingProgress";
 import { itemsLabel } from "@/lib/cart";
 
 export function Cart() {
@@ -25,6 +26,7 @@ export function Cart() {
           </div>
         ) : (
           <>
+            <ShippingProgress subtotal={totals.subtotal} />
             <div className="cart-lines">
               {items.map((item) => (
                 <CartLine key={item.key} item={item} />
