@@ -1,0 +1,31 @@
+{
+  "name": "keycrunch",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Keycrunch, a keyboard and desk-accessory store: the public demo project for UI Verify, tested with Storybook.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build --stats-json",
+    "images": "node scripts/generate-images.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "^10.4.6",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "storybook": "^10.4.6",
+    "typescript": "^5.7.2",
+    "vite": "^7.0.0"
+  }
+}

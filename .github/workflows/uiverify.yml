@@ -1,0 +1,33 @@
+name: UI Verify (Storybook)
+
+# Builds Keycrunch's Storybook and uploads it to UI Verify, which replays each story, diffs it against the
+# baseline, and has the AI judge triage intended changes vs regressions. On a pull request the check
+# shows the changes for review; on main it accepts changes to move the baseline forward.
+#
+# Requires the repo secret UIVERIFY_API_KEY (the Storybook project's key, uv_proj_…).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  visual:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so unchanged stories can be skipped against the baseline commit
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build-storybook
+      - name: Upload to UI Verify
+        env:
+          UIVERIFY_API_KEY: ${{ secrets.UIVERIFY_API_KEY }}
+        run: |
+          FLAGS="--static-dir storybook-static"
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then FLAGS="$FLAGS --auto-accept-changes"; else FLAGS="$FLAGS --exit-zero-on-changes"; fi
+          npx -y uiverify upload $FLAGS
