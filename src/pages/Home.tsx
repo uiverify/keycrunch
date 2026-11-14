@@ -6,7 +6,7 @@ import { imageUrl } from "@/lib/images";
 import { categories, requireProduct } from "@/lib/products";
 import { FREE_SHIPPING_THRESHOLD } from "@/lib/shipping";
 
-const bestsellers = ["keycrunch-75", "keycrunch-wrist-rest", "keycrunch-keycaps", "keycrunch-felt-mat"].map(requireProduct);
+const bestsellers = ["keycrunch-75", "keycrunch-wrist-rest", "keycrunch-keycaps", "keycrunch-coiled-cable"].map(requireProduct);
 
 const promises: { icon: IconName; title: string; text: string }[] = [
   { icon: "truck", title: "Free shipping", text: `On orders over ${formatPrice(FREE_SHIPPING_THRESHOLD)}, dispatched in 1 to 2 days.` },

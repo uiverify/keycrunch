@@ -1,12 +1,13 @@
 import { imageUrl, type ImageSlug } from "./images";
 
-export type CategoryId = "keyboards" | "keycaps" | "wrist-rests" | "desk-mats";
+export type CategoryId = "keyboards" | "keycaps" | "wrist-rests" | "desk-mats" | "cables";
 
 export const categories: { id: CategoryId; name: string; blurb: string; image: ImageSlug }[] = [
   { id: "keyboards", name: "Keyboards", blurb: "Machined aluminium, tuned to sound and feel right.", image: "keycrunch-75-graphite" },
   { id: "keycaps", name: "Keycaps", blurb: "Thick PBT sets that won't shine.", image: "keycaps-sand" },
   { id: "wrist-rests", name: "Wrist rests", blurb: "Solid hardwood, shaped by hand.", image: "wrist-rest-walnut" },
   { id: "desk-mats", name: "Desk mats", blurb: "Merino felt and full-grain leather.", image: "desk-mat-felt" },
+  { id: "cables", name: "Cables", blurb: "Coiled USB-C with an aviator plug.", image: "cable-coiled-orange" },
 ];
 
 export type OptionValue = { name: string; swatch?: string; image?: ImageSlug };
@@ -32,6 +33,7 @@ const graphite = "#4a4a4c";
 const silver = "#d8d8d6";
 const walnut = "#5b3a26";
 const oak = "#d8b98a";
+const orange = "#ff5a1f";
 const sand = "#e2d6c2";
 const charcoal = "#3a3a3a";
 
@@ -162,6 +164,32 @@ export const products: Product[] = [
     ],
     rating: 4.6,
     reviewCount: 145,
+  },
+  {
+    id: "keycrunch-coiled-cable",
+    name: "Keycrunch Coiled Cable",
+    category: "cables",
+    price: 35,
+    tagline: "USB-C · Aviator connector",
+    description:
+      "A braided, double-sleeved coiled cable with a detachable aviator connector, so you can unplug your board without reaching behind the desk.",
+    image: "cable-coiled-orange",
+    options: [
+      {
+        name: "Colour",
+        values: [
+          { name: "Signal Orange", swatch: orange, image: "cable-coiled-orange" },
+          { name: "Graphite", swatch: graphite, image: "cable-coiled-graphite" },
+        ],
+      },
+    ],
+    specs: [
+      ["Length", "1.5 m, 15 cm coil"],
+      ["Connectors", "USB-C to USB-C"],
+      ["Sleeve", "Double braided"],
+    ],
+    rating: 4.7,
+    reviewCount: 96,
   },
 ];
 
