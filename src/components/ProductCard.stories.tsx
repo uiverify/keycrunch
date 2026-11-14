@@ -13,4 +13,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = { args: { product: requireProduct("keycrunch-75") } };
 
+export const SoldOut: Story = { args: { product: requireProduct("keycrunch-leather-mat") } };
+
 export const LongName: Story = { args: { product: requireProduct("keycrunch-65-low-profile") } };
