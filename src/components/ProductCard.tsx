@@ -12,10 +12,12 @@ export function ProductCard({ product }: { product: Product }) {
         {product.soldOut ? <span className="tag">Sold out</span> : product.isNew ? <span className="tag new">New</span> : null}
       </div>
       <div className="product-card-body">
-        <span className="product-card-name">{product.name}</span>
+        <div className="product-card-head">
+          <span className="product-card-name">{product.name}</span>
+          <span className="price">{formatPrice(product.price)}</span>
+        </div>
         <span className="product-card-tagline">{product.tagline}</span>
         <div className="product-card-foot">
-          <span className="price">{formatPrice(product.price)}</span>
           {swatches.length > 1 && (
             <span className="swatches" aria-label={`${swatches.length} colours`}>
               {swatches.map((s) => (
