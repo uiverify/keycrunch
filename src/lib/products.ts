@@ -153,6 +153,7 @@ export const products: Product[] = [
         values: [
           { name: "Sand", swatch: sand, image: "keycaps-sand" },
           { name: "Graphite", swatch: graphite, image: "keycaps-graphite" },
+          { name: "Signal Orange", swatch: orange, image: "keycaps-signal-orange" },
         ],
       },
     ],

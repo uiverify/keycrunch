@@ -25,23 +25,27 @@ export function Cart() {
             </Link>
           </div>
         ) : (
-          <>
-            <ShippingProgress subtotal={totals.subtotal} />
-            <div className="cart-lines">
-              {items.map((item) => (
-                <CartLine key={item.key} item={item} />
-              ))}
-            </div>
-            <Link to="/shop" className="button outline small cart-continue">
-              <Icon name="arrowLeft" size={16} /> Continue shopping
-            </Link>
-            <OrderSummary totals={totals}>
-              <Link to="/checkout" className="button primary block summary-cta">
-                <Icon name="lock" size={16} /> Checkout
+          <div className="cart-layout">
+            <div className="cart-main">
+              <ShippingProgress subtotal={totals.subtotal} />
+              <div className="cart-lines">
+                {items.map((item) => (
+                  <CartLine key={item.key} item={item} />
+                ))}
+              </div>
+              <Link to="/shop" className="button outline small cart-continue">
+                <Icon name="arrowLeft" size={16} /> Continue shopping
               </Link>
-              <span className="summary-note">Free returns within 30 days · Secure payment</span>
-            </OrderSummary>
-          </>
+            </div>
+            <aside className="cart-aside">
+              <OrderSummary totals={totals}>
+                <Link to="/checkout" className="button primary block summary-cta">
+                  <Icon name="lock" size={16} /> Checkout
+                </Link>
+                <span className="summary-note">Free returns within 30 days · Secure payment</span>
+              </OrderSummary>
+            </aside>
+          </div>
         )}
       </div>
     </div>
